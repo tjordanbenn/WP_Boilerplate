@@ -1,0 +1,109 @@
+/* ==========================================================================
+	Mixins
+========================================================================== */
+
+// Media Queries
+//   Usage:
+//   @include breakpoint($large) { };
+//   @include breakpoint(400px, min-height) { };
+$media-feature: 'min-width' !default;
+$max-feature: 'max-width';
+@mixin breakpoint($point, $feature: $media-feature) {
+    @media (#{$feature}: $point) {
+        @content;
+    }
+}
+@mixin bp($point, $feature: $media-feature) {
+    @media (#{$feature}: $point) {
+        @content;
+    }
+}
+@mixin max($point, $feature: $max-feature) {
+    @media (#{$feature}: $point) {
+        @content;
+    }
+}
+
+// Contain Floats
+@mixin clearfix {
+	&:after { content: ""; display: table; clear: both; }
+}
+
+// Cross-browser opacity
+@mixin opacity($trans) {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
+    filter: alpha(opacity=#{$trans * 100});
+    opacity: $trans;
+}
+
+// Placeholder styling
+@mixin placeholder {
+    $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+    @each $placeholder in $placeholders {
+        &:#{$placeholder}-placeholder {
+            @content;
+        }
+    }
+    &.placeholder {
+        @content;
+    }
+}
+
+// Font Smoothing - Mac OS X only
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin max($point) {
+  @if $point == medium {
+    @media (max-width: 767px) { @content; }
+  }
+  @else if $point == large {
+    @media (max-width: 1023px) { @content; }
+  }
+  @else if $point == xlarge {
+    @media (max-width: 1279px)  { @content; }
+  }
+}
+
+@mixin arrow-down {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #363233 transparent transparent transparent;
+}
+
+@mixin arrow-up {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #363233 transparent;
+}
+
+@mixin vertical-center {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin horizon-center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin both-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

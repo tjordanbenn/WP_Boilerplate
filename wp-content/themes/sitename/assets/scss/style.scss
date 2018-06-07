@@ -1,0 +1,18 @@
+// Global variables and mixins
+@import "modules/variables";
+@import "modules/mixins";
+
+// Partials
+@import "partials/normalize";
+@import "partials/base";
+@import "partials/typography";
+@import "partials/header.scss";
+@import "partials/footer.scss";
+
+// Vendor
+@import "vendor/owl.carousel";
+
+// Print
+@media print {
+    @import "partials/print";
+}
