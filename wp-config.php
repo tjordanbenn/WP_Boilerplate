@@ -6,7 +6,7 @@ switch (strtolower($_SERVER['HTTP_HOST'])) {
     // local
     case 'localhost':
         define('DB_HOST',     'localhost');
-        define('DB_NAME',     'benlippen');
+        define('DB_NAME',     'media');
         define('DB_USER',     'root');
         define('DB_PASSWORD', 'root');
         break;

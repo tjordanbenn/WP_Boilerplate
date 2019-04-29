@@ -1,0 +1,28 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.1",
+  "description": "Build configuration for Cobble Hill websites.",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git"
+  },
+  "main": "index.php",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "jshint": "^2.10.2",
+    "jshint-stylish": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cobble HIll"
+}
